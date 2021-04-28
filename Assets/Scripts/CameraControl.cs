@@ -9,8 +9,8 @@ public class CameraControl : MonoBehaviour
     [SerializeField] InputController inputController;
     [SerializeField] PlayerSettings playerSettings;
 
-    private readonly float maxVert = 30f;
-    private readonly float minVert = -10f;
+    private readonly float maxVert = 10f;
+    private readonly float minVert = -20f;
 
     private Vector3 targetPosition;
     private Quaternion targetRotation;

@@ -1,47 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
     [SerializeField] InputController inputController;
     [SerializeField] PlayerSettings playerSettings;
-    [SerializeField] Animator animator;
 
-    private float currentV, currentH;
-    private readonly float backwardsScale = 0.66f;
-    private readonly float interpolation = 3f;
-    private readonly float moveSpeed = 3f;
+    [SerializeField] private float m_moveSpeed = 4;
+    [SerializeField] private float m_turnSpeed = 200;
+    [SerializeField] private Animator m_animator;
+    [SerializeField] private Rigidbody m_rigidBody;
 
+    private float m_currentV = 0;
+    private float m_currentH = 0;
+
+    private readonly float m_interpolation = 10;
+    private readonly float m_walkScale = 0.33f;
+    private readonly float m_backwardsWalkScale = 0.16f;
+    private readonly float m_backwardRunScale = 0.66f;
+
+    private void Start()
+    {
+        m_animator.SetBool("Grounded", true);
+    }
     void Update()
     {
         MoveCharacter();
     }
-
     void MoveCharacter()
     {
+        float v = inputController.Vertical;
+        float h = inputController.Horizontal;
 
-        float xDirection = inputController.Vertical;
-        float yDirection = inputController.Horizontal;
+        bool walk = !inputController.Run;
 
-        
-
-        if (xDirection < 0)
+        if (v < 0)
         {
-            xDirection *= backwardsScale;
+            if (walk) { v *= m_backwardsWalkScale; }
+            else { v *= m_backwardRunScale; }
+        }
+        else if (walk)
+        {
+            v *= m_walkScale;
         }
 
-        currentV = Mathf.Lerp(currentV, xDirection, Time.deltaTime * interpolation);
-        currentH = Mathf.Lerp(currentH, yDirection, Time.deltaTime * interpolation);
+        m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
+        m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
 
-        if (inputController.TestButton)
-        {
-            Debug.Log(currentV);
-        }
+        transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
+        transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
 
-        animator.SetFloat("speed", currentV);
-
-        transform.position += transform.forward * currentV * moveSpeed * Time.deltaTime;
-        transform.Rotate(Vector3.up * yDirection);
+        m_animator.SetFloat("MoveSpeed", m_currentV);
     }
 }
