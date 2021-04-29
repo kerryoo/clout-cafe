@@ -5972,7 +5972,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602958003}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -8476,7 +8476,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853908489}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -9423,7 +9423,7 @@ MonoBehaviour:
   defaultIndex: 2
   index: 0
   itemList:
-  - itemTitle: Selected Item 0
+  - itemTitle: Base Outfit
     onValueChanged:
       m_PersistentCalls:
         m_Calls: []
@@ -9431,7 +9431,7 @@ MonoBehaviour:
     onValueChanged:
       m_PersistentCalls:
         m_Calls: []
-  - itemTitle: Selected Item 2
+  - itemTitle: Base Outfit
     onValueChanged:
       m_PersistentCalls:
         m_Calls: []
@@ -10357,7 +10357,7 @@ MonoBehaviour:
   defaultIndex: 2
   index: 0
   itemList:
-  - itemTitle: Selected Item 0
+  - itemTitle: Base Body
     onValueChanged:
       m_PersistentCalls:
         m_Calls: []
@@ -10365,7 +10365,7 @@ MonoBehaviour:
     onValueChanged:
       m_PersistentCalls:
         m_Calls: []
-  - itemTitle: Selected Item 2
+  - itemTitle: Base Body
     onValueChanged:
       m_PersistentCalls:
         m_Calls: []
@@ -13860,7 +13860,7 @@ MonoBehaviour:
   defaultIndex: 2
   index: 0
   itemList:
-  - itemTitle: Selected Item 0
+  - itemTitle: Base Color
     onValueChanged:
       m_PersistentCalls:
         m_Calls: []
@@ -13868,7 +13868,7 @@ MonoBehaviour:
     onValueChanged:
       m_PersistentCalls:
         m_Calls: []
-  - itemTitle: Selected Item 2
+  - itemTitle: Base Color
     onValueChanged:
       m_PersistentCalls:
         m_Calls: []

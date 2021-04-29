@@ -1,11 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Vertical;
-//public float Horizontal;
-//public bool Interact;
-//public Vector2 MouseInput;
-//public bool TestButton;
 
 public class Player : MonoBehaviour
 {

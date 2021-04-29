@@ -19,7 +19,7 @@ public class InteractController : MonoBehaviour
             {
                 if (hitCollider.CompareTag("NPC"))
                 {
-                    Debug.Log("Interaction with NPC fired");
+                    hitCollider.GetComponent<NPC>().Interact();
                 }
             }
         }

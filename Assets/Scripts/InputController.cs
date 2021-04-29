@@ -21,7 +21,7 @@ public class InputController : MonoBehaviour
 
         TestButton = Input.GetKeyDown(KeyCode.P);
 
-        Interact = Input.GetButton("Fire1") || Input.GetKeyDown(KeyCode.Space);
+        Interact = Input.GetKeyDown(KeyCode.Space);
         Run = Input.GetKey(KeyCode.LeftShift);
         Vertical = Input.GetAxis("Vertical");
         Horizontal = Input.GetAxis("Horizontal");
