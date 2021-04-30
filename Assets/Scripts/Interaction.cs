@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interaction : MonoBehaviour
 {
     public Queue<string> queue = new Queue<string>();
+    public string[] options = new string[2];
 
     public void addInteractionLine(string line)
     {
@@ -19,5 +20,10 @@ public class Interaction : MonoBehaviour
     public bool hasNext()
     {
         return queue.Count != 0;
+    }
+
+    public string[] getOptions()
+    {
+        return options;
     }
 }

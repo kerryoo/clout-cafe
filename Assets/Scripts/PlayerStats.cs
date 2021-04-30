@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public bool met = false;
-    public int katieRelation = 0;
+    public bool metKatie = false;
     public int clout = 0;
+    public string characterName = "Bob";
 }
