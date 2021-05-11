@@ -47,6 +47,6 @@ public class DemoManager : MonoBehaviour
 
     public void enterMainScene()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("CafeScene");
     }
 }
